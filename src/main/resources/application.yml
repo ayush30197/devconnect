@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: A Developer Collaboration Platform
+  datasource:
+    url: "jdbc:mysql://localhost:3306/devconnect?useSSL=false&allowPublicKeyRetrieval=true"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: myJwtSecretKey
+  expirationMs: 86400000
+

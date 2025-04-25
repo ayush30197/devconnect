@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0           # Uses MySQL 8.0 Docker image
+    container_name: devconnect-db  # Explicit container name
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # Sets root password (unsafe for production!)
+      MYSQL_DATABASE: devconnect  # Creates a database named 'devconnect'
+    ports:
+      - "3306:3306"              # Exposes MySQL port (host:container)
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persists data in a named volume
+
+volumes:
+  mysql_data:                   # Declares the named volume
